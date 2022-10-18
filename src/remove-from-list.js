@@ -23,7 +23,10 @@ const { ListNode } = require('../extensions/list-node.js');
  * }
  */
 function removeKFromList(l, k) {
-  if (l === null) {
+
+  //Version 1
+
+  if (!l) {
     return null;
   }
 
@@ -46,7 +49,29 @@ function removeKFromList(l, k) {
     prev.next = current;
   }
 
-  return l;  
+  return l;
+
+  //Version 2
+  
+  // if (!l) {
+  //   return null;
+  // }
+  // let newL;
+  // let current = l;
+  // let copy;
+  // while(current) {
+  //   if (current.value !== k) {
+  //     if (!newL) {
+  //       newL = new ListNode(current.value);
+  //       copy = newL;
+  //     } else {
+  //       copy.next = new ListNode(current.value);
+  //       copy = copy.next;
+  //     }
+  //   }
+  //   current = current.next;
+  // }
+  // return newL;
 }
 
 module.exports = {
