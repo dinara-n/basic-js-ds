@@ -33,20 +33,22 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return hasNode(this.tree, data);
+    return this.find(data) ? true : false;
+    
+    // return hasNode(this.tree, data);
 
-    function hasNode(node, data) {
-      if (!node) {
-        return false;
-      }
-      if (node.data > data) {
-        return hasNode(node.left, data);
-      }
-      if (node.data < data) {
-        return hasNode(node.right, data);
-      }
-      return true;
-    }
+    // function hasNode(node, data) {
+    //   if (!node) {
+    //     return false;
+    //   }
+    //   if (node.data > data) {
+    //     return hasNode(node.left, data);
+    //   }
+    //   if (node.data < data) {
+    //     return hasNode(node.right, data);
+    //   }
+    //   return true;
+    // }
   }
 
   find(data) {
